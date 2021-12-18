@@ -1,18 +1,15 @@
-import { useState } from "react"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-icons/font/bootstrap-icons.css"
+import Cards from "./components/Cards"
+import Footer from "./components/Footer"
+import Header from "./components/Header"
 
 export default function App() {
-  const [contador,setContador] = useState(0)
-
   return (
     <div>
-      <h1>Empezando En PWA</h1>
-      <h3>{contador}</h3>
-      <button onClick={() => {
-        setContador(contador + 1)
-      }}>aumentar</button>
-      <button onClick={() => {
-        setContador(contador - 1)
-      }}>disminuir</button>      
+      <Header />
+      <Cards />
+      <Footer />
     </div>
   )
 }
