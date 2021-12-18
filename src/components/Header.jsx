@@ -1,4 +1,4 @@
-import { useRef, useContext, useState } from "react"
+// import { useRef, useContext, useState } from "react"
 import "../style/header.css"
 
 export default function Header() {
