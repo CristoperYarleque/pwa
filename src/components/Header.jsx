@@ -1,45 +1,47 @@
-// import { useRef, useContext, useState } from "react"
+import { useRef, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function Header() {
-  // const [input,setInput] = useState("")
-  // const buscar = useRef()
-  // const navigate = useNavigate()
+  const [input,setInput] = useState("")
+  const buscar = useRef()
+  const navigate = useNavigate()
 
-  // const eventoClick = () => {
-  // 	navigate(`/search/${buscar.current.value}`)
-  // 	setInput("")
-  // }
+  const eventoClick = () => {
+  	navigate(`/${buscar.current.value}`)
+		setInput("")
+  }
 
-  // const eventoEnter = (e) => {
-  // 	if(e.key === "Enter"){
-  // 	navigate(`/search/${buscar.current.value}`)
-  // 	setInput("")
-  // }
-  // }
+  const eventoEnter = (e) => {
+  	if(e.key === "Enter"){
+      navigate(`/${buscar.current.value}`)
+      setInput("")
+  }
+  }
 
-  // const totalCarrito = carrito.reduce((total, prod) => {
-  //     return total + prod.cantidad;
-  // }, 0);
-
-  // const cambios = () => {
-  // 	setInput(buscar.current.value)
-  // }
+  const cambios = () => {
+  	setInput(buscar.current.value)
+  }
 
   return (
     <div className="sticky-top">
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-black p-4">
+      <div className="collapse" id="navbarToggleExternalContent">
+        <div className="bg-black p-4">
           <input
+            onKeyUp={eventoEnter}
+            onChange={cambios}
+            value={input}
+            ref={buscar}
             type="text"
             className="form-control"
             placeholder="Buscar pokemon..."
           />
+          <button onClick={eventoClick}>search</button>
         </div>
       </div>
-      <nav class="navbar navbar-dark bg-black">
-        <div class="container-fluid">
+      <nav className="navbar navbar-dark bg-black">
+        <div className="container-fluid">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarToggleExternalContent"
@@ -47,7 +49,7 @@ export default function Header() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
         </div>
         <h1

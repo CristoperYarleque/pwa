@@ -1,17 +1,21 @@
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap/dist/js/bootstrap.min.js"
-import "bootstrap-icons/font/bootstrap-icons.css"
-import Cards from "./components/Cards"
-import Footer from "./components/Footer"
-import Header from "./components/Header"
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Cards from "./components/Cards";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Search from "./components/Search";
 
 export default function App() {
   return (
-    <div>
+    <Router>
       <Header />
-      <Cards />
+      <Routes>
+        <Route path="/" element={<Cards />} />
+        <Route path="/:busqueda" element={<Search />}/> 
+      </Routes>
       <Footer />
-    </div>
-  )
+    </Router>
+  );
 }
-
