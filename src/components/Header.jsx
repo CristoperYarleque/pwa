@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <div className="sticky-top">
       <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
+        <div class="bg-black p-4">
           <input
             type="text"
             className="form-control"
@@ -36,7 +36,7 @@ export default function Header() {
           />
         </div>
       </div>
-      <nav class="navbar navbar-dark bg-dark">
+      <nav class="navbar navbar-dark bg-black">
         <div class="container-fluid">
           <button
             class="navbar-toggler"
