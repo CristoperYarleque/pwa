@@ -15,7 +15,7 @@ export default function App() {
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Cards />} />
-        <Route path="/:busqueda" element={<Search />}/> 
+        <Route path="/:busqueda" element={<Search />}/>
       </Routes>
       <Footer />
     </Router>

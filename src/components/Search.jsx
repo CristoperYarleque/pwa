@@ -4,7 +4,7 @@ import { obtenerDatos } from "../services/Services"
 
 export default function Search() {
   const [poke1, setPoke1] = useState([]);
-  const { busqueda} = useParams();
+  const { busqueda } = useParams();
 
   const getData1 = async () => {
     try {

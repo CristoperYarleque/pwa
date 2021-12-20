@@ -5,15 +5,15 @@ import axios from "axios";
 
 export default function Cards() {
   const [poke, setPoke] = useState([]);
-  const [pagina,setPagina] = useState(0)
-  const [limite] = useState(9)
+  const [pagina, setPagina] = useState(0);
+  const [limite] = useState(9);
 
   const getData = async () => {
     try {
       const obtDatos = await obtenerDatosPorPagina(limite, pagina);
       for (let i = 0; i < obtDatos.results.length; i++) {
         const data = await axios.get(obtDatos.results[i].url);
-        setPoke((prevArray) => [...prevArray,data.data])
+        setPoke((prevArray) => [...prevArray, data.data]);
       }
     } catch (error) {
       throw error;
@@ -21,8 +21,8 @@ export default function Cards() {
   };
 
   useEffect(() => {
-    getData()
-  },[pagina])
+    getData();
+  }, [pagina]);
 
   return (
     <div className="container-fluid">
@@ -33,7 +33,9 @@ export default function Cards() {
         <div className="text-center mb-5">
           <button
             className="btn btn-secondary mb-5"
-            onClick={() => setPagina(pagina + limite)}
+            onClick={() => {
+              setPagina(limite + pagina);
+            }}
           >
             SIGUIENTE
           </button>

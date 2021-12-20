@@ -20,4 +20,13 @@ const obtenerDatosPorPagina = async (limite,pagina) => {
     }
 }
 
-export { obtenerDatos,obtenerDatosPorPagina }
+const obtenerDatosPorPagina1 = async (limite,pagina) => {
+    try {
+        const {data} = await axios.get(`${URL}pokemon?limit=${limite}&offset=${pagina}`)
+        return data
+    } catch (error) {
+        throw error
+    }
+}
+
+export { obtenerDatos,obtenerDatosPorPagina,obtenerDatosPorPagina1 }

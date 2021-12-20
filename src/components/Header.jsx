@@ -8,7 +8,7 @@ export default function Header() {
 
   const eventoEnter = (e) => {
   	if(e.key === "Enter"){
-      navigate(`/${buscar.current.value}`)
+      navigate(`/${buscar.current.value.toLowerCase()}`)
       setInput("")
   }
   }
