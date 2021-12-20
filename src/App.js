@@ -6,12 +6,14 @@ import Cards from "./components/Cards";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import NotFound from "./components/NotFound";
 
 export default function App() {
   return (
     <Router>
       <Header />
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Cards />} />
         <Route path="/:busqueda" element={<Search />}/> 
       </Routes>

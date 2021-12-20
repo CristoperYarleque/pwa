@@ -2,14 +2,9 @@ import { useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function Header() {
-  const [input,setInput] = useState("")
+  const [input,setInput] = useState()
   const buscar = useRef()
   const navigate = useNavigate()
-
-  const eventoClick = () => {
-  	navigate(`/${buscar.current.value}`)
-		setInput("")
-  }
 
   const eventoEnter = (e) => {
   	if(e.key === "Enter"){
@@ -35,7 +30,6 @@ export default function Header() {
             className="form-control"
             placeholder="Buscar pokemon..."
           />
-          <button onClick={eventoClick}>search</button>
         </div>
       </div>
       <nav className="navbar navbar-dark bg-black">
@@ -59,13 +53,6 @@ export default function Header() {
           POKEDEX
         </h1>
       </nav>
-
-      {/* <header className="sticky-top row"> */}
-      {/* <nav className="nav row"> */}
-      {/* <input type="text" onKeyUp={eventoEnter} value={input} onChange={cambios} ref={buscar} className="form-control ms-2" placeholder="Buscar juego..."/> */}
-      {/* <i onClick={eventoClick} className="bi bi-search lupa mt-2 ml-3"/> */}
-      {/* </nav> */}
-      {/* </header> */}
     </div>
   );
 }
